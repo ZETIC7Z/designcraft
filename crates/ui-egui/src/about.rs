@@ -160,7 +160,7 @@ pub fn show(app: &mut DesignApp, ctx: &egui::Context) {
             ui.add_space(6.0);
             ui.label(crate::rtl::widget(
                 ui,
-                egui::RichText::new(crate::i18n::tr(&app.ui.language, "DesignCraft")).font(semibold(26.0)).color(t.text_strong),
+                egui::RichText::new(crate::i18n::tr(&app.ui.language, "Zetica Design")).font(semibold(26.0)).color(t.text_strong),
             ));
             crate::rtl::label(
                 ui,
@@ -177,12 +177,12 @@ pub fn show(app: &mut DesignApp, ctx: &egui::Context) {
             ));
             ui.label(crate::rtl::widget(
                 ui,
-                egui::RichText::new(crate::i18n::tr(&app.ui.language, "Part of the ArtCraft suite of open creative tools."))
+                egui::RichText::new(crate::i18n::tr(&app.ui.language, "Part of the Zetica suite of open creative tools."))
                     .size(12.0)
                     .color(t.text_dim),
             ));
             ui.add_space(16.0);
-            if discord_button(ui, crate::i18n::tr(&app.ui.language, "Join the ArtCraft Discord"), vec2(300.0, 40.0)) {
+            if discord_button(ui, crate::i18n::tr(&app.ui.language, "Join the Zetica Discord"), vec2(300.0, 40.0)) {
                 open = Some("discord");
             }
             ui.add_space(4.0);
@@ -198,7 +198,7 @@ pub fn show(app: &mut DesignApp, ctx: &egui::Context) {
                 let w = 330.0;
                 ui.add_space(((ui.available_width() - w) / 2.0).max(0.0));
                 for (text, key) in
-                    [("DesignCraft page", "appPage"), ("GitHub", "github"), ("getartcraft.com", "website"), ("Report an issue", "issues")]
+                    [("Zetica Design page", "appPage"), ("GitHub", "github"), ("zeticuz.xyz", "website"), ("Report an issue", "issues")]
                 {
                     if link(ui, crate::i18n::tr(&app.ui.language, text), links::get(key).unwrap_or_default(), t.accent) {
                         open = Some(key);
@@ -211,7 +211,7 @@ pub fn show(app: &mut DesignApp, ctx: &egui::Context) {
             ui.add_space(6.0);
             ui.label(crate::rtl::widget(
                 ui,
-                egui::RichText::new(crate::i18n::tr(&app.ui.language, "More ArtCraft apps")).font(semibold(12.0)).color(t.text_strong),
+                egui::RichText::new(crate::i18n::tr(&app.ui.language, "More Zetica apps")).font(semibold(12.0)).color(t.text_strong),
             ));
             ui.add_space(4.0);
             ui.horizontal(|ui| {
@@ -235,7 +235,7 @@ pub fn show(app: &mut DesignApp, ctx: &egui::Context) {
             ui.add_space(12.0);
             ui.label(crate::rtl::widget(
                 ui,
-                egui::RichText::new(crate::i18n::tr(&app.ui.language, "Open source. No telemetry.")).size(11.0).color(t.text_dim),
+                egui::RichText::new(crate::i18n::tr(&app.ui.language, "Developed by Sam Pangilinan (ZETICUZ) · https://www.zeticuz.xyz/")).size(11.0).color(t.text_dim),
             ));
             ui.add_space(8.0);
             if ui.button(crate::rtl::widget(ui, crate::i18n::tr(&app.ui.language, "  Close  "))).clicked() {

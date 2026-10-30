@@ -14,7 +14,7 @@ pub fn start_screen(app: &mut DesignApp, ui: &mut egui::Ui) {
             egui::ScrollArea::vertical().auto_shrink([false, false]).show(ui, |ui| {
                 ui.label(crate::rtl::widget(
                     ui,
-                    egui::RichText::new(crate::i18n::tr(&app.ui.language, "Welcome to DesignCraft")).font(semibold(28.0)).color(t.text_strong),
+                    egui::RichText::new(crate::i18n::tr(&app.ui.language, "Welcome to Zetica Design")).font(semibold(28.0)).color(t.text_strong),
                 ));
                 ui.label(crate::rtl::widget(
                     ui,
@@ -249,7 +249,7 @@ fn community_card(app: &mut DesignApp, ui: &mut egui::Ui) {
                 ));
                 ui.add_space(4.0);
                 ui.horizontal(|ui| {
-                    for (text, id) in [("DesignCraft page", "help.appPage"), ("GitHub", "help.github"), ("getartcraft.com", "help.website")] {
+                    for (text, id) in [("Zetica Design page", "help.appPage"), ("GitHub", "help.github"), ("zeticuz.xyz", "help.website")] {
                         let url = designcraft_engine::links::get(&id[5..]).unwrap_or_default();
                         let l = ui
                             .add(egui::Label::new(egui::RichText::new(text).size(12.0).color(t.accent).underline()).sense(Sense::click()))

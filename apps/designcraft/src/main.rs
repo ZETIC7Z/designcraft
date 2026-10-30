@@ -290,14 +290,14 @@ fn main() -> std::process::ExitCode {
     // leaves no file behind. Records logged until now are written to it first.
     if let (Some(logger), Some(dir)) = (logger, profile::config_dir()) {
         match logger.attach_dir(&dir.join("logs")) {
-            Ok(path) => log::info!("DesignCraft {}, log file {}", env!("CARGO_PKG_VERSION"), path.display()),
+            Ok(path) => log::info!("Zetica Design {}, log file {}", env!("CARGO_PKG_VERSION"), path.display()),
             // Standard error only by now (`attach_dir` gave up on the file); unlike `eprintln!`, never panics.
             Err(e) => log::warn!("no log file: {e}"),
         }
     }
     let mut options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("DesignCraft")
+            .with_title("Zetica Design")
             .with_inner_size([1440.0, 900.0])
             .with_min_inner_size([900.0, 560.0])
             .with_decorations(!cfg!(target_os = "windows"))
@@ -378,7 +378,7 @@ fn main() -> std::process::ExitCode {
     // A panic that ends the window (egui-wgpu's own) is caught here: never a crash.
     let run = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
         eframe::run_native(
-            "DesignCraft",
+            "Zetica Design",
             options,
             Box::new(move |cc| {
                 let mut restarted = None;
